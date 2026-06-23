@@ -68,7 +68,7 @@ internal fun activityTemplate(packageName: PackageName, baseName: String): Strin
                                     TopAppBar(
                                         appBarTitle = screenTitle ?: title,
                                         onClick = {
-                                            if (currentRoute == ${baseName}NavHostSteps.allScreens.first().route) {
+                                            if (navHostController.previousBackStackEntry == null) {
                                                 finish()
                                             } else {
                                                 navHostController.popBackStack()
